@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>foods</title>
+</head>
+<body>
+{% block content %}
+ <div class="p-3 mb-2 bg-secondary text-white">
+    <h1 class="text-center"><strong>our restaurant gallery</strong></h1>
+    <span class="border border-success">
+        <div class="card-group">
+  <div class="card">
+    <img src="{% static 'images/images.jpeg' %}" height="300px" class="card-img-top" alt="...">
+  </div>
+  <div class="card">
+    <img src="{% static 'images/images2.jpeg' %}" height="300px" class="card-img-top" alt="...">
+  </div>
+  <div class="card">
+    <img src="{% static 'images/img8.jpg' %}" height="300px" class="card-img-top" alt="...">
+  </div>
+</div>
+    </span>
+    <span class="border border-success">
+        <div class="card-group">
+  <div class="card">
+    <img src="{% static 'images/img3.jpg' %}" height="300px" class="card-img-top" alt="...">
+  </div>
+  <div class="card">
+    <img src="{% static 'images/images3.jpeg' %}" height="300px" class="card-img-top" alt="...">
+  </div>
+  <div class="card">
+    <img src="{% static 'images/images 4.jpeg' %}" height="300px" class="card-img-top" alt="...">
+  </div>
+</div>
+    </span>
+    </div>
+{% endblock %}
+</body>
+</html>

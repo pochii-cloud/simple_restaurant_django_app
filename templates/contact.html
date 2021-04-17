@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact</title>
+</head>
+<body>
+{% block content %}
+    <div class="p-3 mb-2 bg-secondary text-white">
+        <h3 class="text-center"><strong>give us  your compliments,complains and any type of feedback concerning our food<br>and services offerred</strong></h3>
+    </div>
+       {% for messages in messages %}
+        <div class="clear_features text-center" data-dismiss="alert"></div>
+            <small>feed back has been received ..thankyou</small>
+        </div>
+        {{ message }}
+    </div>
+   {% endfor %}
+    <div class="offset-3 col-md-6">
+    <div class="form-group">
+     <form method="post">
+      {% csrf_token %}
+         {% for field in form%}
+             <label>{{ field.label_tag }}</label>
+             {{ field}}
+         {% endfor %}
+         <button class="btn btn-success" type="submit">submit </button>
+     </form>
+    </div>
+    </div>
+{% endblock %}
+</body>
+</html>

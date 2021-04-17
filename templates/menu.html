@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+</head>
+<div>
+
+{% block content %}
+     <div class="card bg-dark text-white">
+         <h1 class="text-center"><strong><i>our menu entries</i></strong></h1>
+     </br>
+    </div>
+
+  <div>
+    <div class="card-group">
+        {% for Food_item in Food %}
+            {% if Food_item.category.name == 'menu' %}
+             <div class="card">
+    <img src="{{ Food_item.image.url }}"  height="400px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="card-title"><b>{{ Food_item.name }}</b></h2>
+      <p class="card-text text-danger">$50.</p>
+         <a class="btn btn-danger" href="{% url 'order' food_id=Food_item.id %}" type="button">order</a>
+    </div>
+  </div>
+            {% endif %}
+        {% endfor %}
+</div>
+</div>
+
+     <div>
+    <div class="card-group">
+        {% for Food_item in Food %}
+            {% if Food_item.category.name == 'menu2' %}
+             <div class="card">
+    <img src="{{ Food_item.image.url }}"  height="400px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="card-title"><b>{{ Food_item.name }}</b></h2>
+      <p class="card-text text-danger">$50.</p>
+         <a class="btn btn-danger" href="{% url 'order' food_id=Food_item.id %}" type="button">order</a>
+    </div>
+  </div>
+            {% endif %}
+        {% endfor %}
+</div>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>
